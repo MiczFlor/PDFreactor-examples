@@ -19,6 +19,27 @@ support hyphenation... yet. For details, see the great site `www.print-css.rocks
 * `samples/Fonts/` contains all fonts used anywhere in the CSS samples
 * `lib/` contains the PDF wrapper for PDreactor 
 
+### Inside a sample directory
+
+There are sample PDF files:
+* `samples/BT_theme_academic/static_mpdf_test.pdf`
+* `samples/BT_theme_academic/static_pdfreactor_test.pdf`
+
+There are the mpdf HTML and CSS files for reference:
+* `samples/BT_theme_academic/mpdf-endmatter.html`
+* `samples/BT_theme_academic/mpdf-frontmatter.html`
+* `samples/BT_theme_academic/mpdf-body.html` (this is the mainmatter)
+
+And there are the PDFreactor files which will be rendered. If you start a new sample folder, make sure
+they are named like the following, because this is what the php file is looking for:
+* `samples/BT_theme_academic/pdfreactor-body.html`
+* `samples/BT_theme_academic/pdfreactor-style.css`
+
+The following two CSS files are included by `pdfreactor-style.css`. 
+They are optional - including the fonts and page size:
+* `samples/BT_theme_academic/_PDFRfonts.css`
+* `samples/BT_theme_academic/_PDFRpagesize.css`
+
 ## Install
 
 * You need to have PDFreactor Web Service installed. See www.pdfreactor.com
