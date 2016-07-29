@@ -1,0 +1,14 @@
+/* page measurements and margins */
+@page{
+  size: 210mm 297mm; 
+  margin-top: 2.4cm; 
+  margin-bottom: 2.8cm;
+}
+@page:left{
+  margin-left: 3.4cm; 
+  margin-right: 2.6cm;
+}
+@page:right{
+  margin-left: 2.6cm; 
+  margin-right: 3.4cm;
+}
