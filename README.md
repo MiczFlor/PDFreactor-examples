@@ -21,6 +21,18 @@ folder with the HTML/CSS file and type (.e.g.):
 
 This will create a PDF by the name of pdfreactor-body.pdf
 
+## Running PDFreactor from the command line
+
+Yuo can create PDF files using the command line as well. After downloading the 
+Tarball from `http://www.pdfreactor.com/download/` and extracting it (anywhere)
+on your system, you can use the following command to create a PDF:
+
+`cd /path/to/pdfreactor/html/file/; /path/to/pdfreactor/bin/pdfreactor.py -i body-pdfreactor.html -o pdfreactor.pdf`
+
+Important: the CSS file needs to be in the same folder AND the css file needs to be linked in the
+header of the HTML file. Inside the CSS file, you need to link to the font files 
+as a relative path.
+
 ## Structure
 
 * `samples/` contains the folders with relevant HTML, CSS files
