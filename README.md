@@ -11,7 +11,15 @@ the proprietary PDFreactor solution.
 (Other proprietary export renderers can be added, like PrinceXML. We decided to
 go with PDFreactor, because their support of baseline-grid is making it that bit
 more attractive. The open source version vivliostyle is impressive, but does not 
-support hyphenation... yet. For details, see the great site `www.print-css.rocks`)
+support hyphenation... yet. For details, see the great site `www.print-css.rocks`.)
+
+If you have PrinceXML installed, you can also create PDFs from the HTML/CSS files
+to get an impression of what they will come out like. In your terminal, move to the
+folder with the HTML/CSS file and type (.e.g.):
+
+`prince -s pdfreactor-style.css pdfreactor-body.html -o princexml.pdf`
+
+This will create a PDF by the name of pdfreactor-body.pdf
 
 ## Structure
 

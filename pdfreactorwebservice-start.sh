@@ -1,1 +1,1 @@
-/home/micz/Downloads/AA_Software/PDFreactor/bin/pdfreactorwebservice start
+/home/micz/Software/PDFreactor_8_1_8613_1/bin/pdfreactorwebservice start

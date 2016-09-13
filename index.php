@@ -11,10 +11,13 @@ if(
   if(
     file_exists($dir."/pdfreactor-body.html")
     && file_exists($dir."/pdfreactor-style.css")
+//    && file_exists($dir."/bod_mpdf-UNIVERSAL.css")
     ) {
     $create = array(
       'html' => $dir.'/pdfreactor-body.html', 
-      'css' => $dir.'/pdfreactor-style.css'
+      'filename' => $dir.'/pdfreactor-raw.pdf', 
+      'css' => $dir.'/pdfreactor-style.css',
+//      'css' => $dir.'/bod_mpdf-UNIVERSAL.css',
     );
     // now load php wrapper
     include("lib/include.php");
@@ -37,10 +40,12 @@ if(
       file_exists($dir."/pdfreactor-body.html")
       && file_exists($dir."/pdfreactor-style.css")
       ) {
-      print "\n  <li><a href='?dir=".urlencode($dir)."' target='_blank'>".$dir."</li>";
+      print "\n  <li><a href='?dir=".urlencode($dir)."' target='_blank'>".$dir."</a></li>";
     }
   }
   print "</ul>\n";
+  print "\nDelete page 2: <pre>pdftk pdfreactor-body.pdf cat 1 3-end output pdfreactor.pdf</pre>";
+  print "\Create PrinceXML PDF: <pre>prince -s pdfreactor-style.css pdfreactor-body.html --pdf-profile=PDF/X-3:2003 -o princexml.pdf</pre>";
   print "\n</body>\n</html>";
 }
 
