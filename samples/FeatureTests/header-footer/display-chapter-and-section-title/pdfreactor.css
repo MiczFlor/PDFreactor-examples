@@ -1,0 +1,885 @@
+/* Pre-load 'Bauhaus (Compact)' Version 0.2 theme fonts */
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../Fonts/TeXGyreAdventor-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../Fonts/TeXGyreAdventor-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../Fonts/TeXGyreAdventor-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'texgyreadventor';
+    src: url('../Fonts/TeXGyreAdventor-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'texgyrecursor';
+    src: url('../Fonts/TeXGyreCursor-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyrecursor';
+    src: url('../Fonts/TeXGyreCursor-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyrecursor';
+    src: url('../Fonts/TeXGyreCursor-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'texgyrecursor';
+    src: url('../Fonts/TeXGyreCursor-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+  @page {
+      sheet-size: 170mm 220mm;  
+      size: 170mm 220mm;      
+  }
+  @page:right {    
+      margin-left: 1.8cm; 
+      margin-right: 1.8cm;
+      margin-top: 2.4cm; 
+      margin-bottom: 2.8cm;       
+  }
+  @page:left {    
+      margin-right: 1.8cm; 
+      margin-left: 1.8cm;
+      margin-top: 2.4cm; 
+      margin-bottom: 2.8cm;       
+  }
+
+/* START PDFreactor specific CSS */
+
+/* page header and footer */
+
+/* no header or footer starting after page 6 (with page 7) */
+/* @page :-ro-nth(1n+6) { */
+/* no header or footer for the first 6 pages */
+/* @page :-ro-nth(-1n+6) { */
+@page
+{
+  @top-left { 
+    content: none; 
+    margin-top: 8mm;
+    font-family: "texgyreadventor"; 
+    font-size: 5pt; 
+    white-space:pre-wrap;
+  }
+  @top-center { 
+    content: none; 
+    margin-top: 8mm;
+    font-family: "texgyreadventor"; 
+    font-size: 5pt; 
+    white-space:pre-wrap;
+  }
+  @top-right { 
+    content: none; 
+    margin-top: 8mm;
+    font-family: "texgyreadventor"; 
+    font-size: 5pt; 
+    white-space:pre-wrap;
+  }
+  @bottom-left { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: "texgyreadventor"; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+  @bottom-center { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: "texgyreadventor"; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+  @bottom-right { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: "texgyreadventor"; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+}
+/* roman page counter in footer for the first 6 pages */
+/*@page :-ro-nth(-1n+6) {*/
+/*  @bottom-center { content: counter(page, lower-roman); }*/
+/*}*/
+
+/* Header and Footer content */
+/* page numbering: content: counter(page); */
+
+
+/**************************************************************/
+/* page header and footer */
+
+div.mainmatter {
+  page: mainmatter;
+}
+@page mainmatter:left {
+  @top-left { 
+    content: "Title of the book";
+  }
+  @top-center { 
+    content: "";
+  }
+  @top-right { 
+    content: "";
+  }
+  @bottom-left { 
+    content: "";
+  }
+  @bottom-center { 
+    content: counter(page);
+  }
+  @bottom-right { 
+    content: "";
+  }
+}
+@page mainmatter:right {
+  @top-left { 
+    content: "";
+  }
+  @top-center { 
+    content: "";
+  }
+  @top-right { 
+    content: "Title of the book";
+  }
+  @bottom-left { 
+    content: "";
+  }
+  @bottom-center { 
+    content: counter(page);
+  }
+  @bottom-right { 
+    content: "";
+  }
+}
+
+
+/**************************************************************/
+/* page breaks for Frontmatter */
+div#frontmatter-dedication,
+div#frontmatter-title-page,
+div#frontmatter-collophon,
+div.bookpart,
+div.mpdf_toc
+{
+    page-break-before: always; /* The chapter should always start on a new page */
+}
+
+/**************************************************************/
+/* baseline grid */
+body {
+  -ro-line-grid: create;
+}
+/* snapping to baseline */
+p {
+  -ro-line-snap: baseline;
+}
+
+/**************************************************************/
+/* widows and orphans */
+p {
+  orphans: 2;
+  widows: 2;
+}
+
+/* hyphenation */
+html {
+  hyphens: auto
+}
+
+/* multi-columns */
+body { 
+  /*column-count: 2;/**/
+}
+
+/* page breaks */
+div[data-type="singlepage"] {
+    page-break-before: always;
+    page-break-after: always;
+}
+
+/* print chapter title */
+@page {
+  @top-center { 
+    /*content: string(chaptertitle); /* chapter title */
+  }
+}
+
+/**************************************************************/
+/* BoD frontmatter styling */
+.align-bottom {
+    position: fixed;
+    overflow: visible;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.frontmatter-half-title {
+  font-family: "texgyreadventor"; 
+  font-weight: bold; 
+  font-size: 20pt;
+  text-align: left; 
+  line-height: 1.1em;
+  margin: 0mm;
+  padding: 0mm;
+  padding-top: 45pt;
+  /*padding-top: 48mm; */
+}
+
+div.frontmatter-dedication {
+  font-family: "texgyreadventor"; 
+  font-weight: normal; 
+  font-size: 13.3pt;
+  text-align: left; 
+  line-height: 1.1em;
+  padding: 0mm;
+  margin: 0mm;
+  padding-top: 45pt;
+}
+
+div.frontmatter-dedication p {
+  text-align: left; 
+}
+
+div.frontmatter-author-name {
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 20pt;
+  text-transform: none;
+  padding-top: 45pt;
+  font-weight: normal;
+  /* padding-bottom: 0.735cm; /* belletristik */
+  padding-bottom: 10mm;
+  margin: 0mm;
+}
+
+h1.frontmatter-book-title {
+  text-align: left; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  font-family: "texgyreadventor"; 
+  text-decoration: none;
+  font-size: 30pt;
+  line-height: 1.1em;
+  padding: 0mm;
+  margin: 0mm;
+  padding-bottom: 0.21cm;
+}
+
+div.frontmatter-subtitle {
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 20pt;
+  font-weight: normal;
+  line-height: 1.1em;
+  padding: 0mm;
+  margin: 0mm;  
+}
+/* is this still needed? */
+p.frontmatter-copyright {
+  font-family: inherit;
+  font-size: 9pt;
+  font-weight: normal;
+  padding-top: 10mm;
+}
+/* is this still needed? */
+h1.frontmatter-inhalt {
+  font-family: inherit;
+  font-size: 15pt;
+  font-weight: bold;
+  text-align: inherit;
+  hyphens: auto;
+}
+
+.cpytxt
+{
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 16.6pt;
+  font-weight: normal;
+  hyphens: none;
+  margin-top:0em;
+  margin-bottom:0em;
+}
+
+/* / BoD frontmatter styling */
+/**************************************************************/
+
+
+
+/**************************************************************/
+/* table of contents */
+
+.mpdf_toc a[href]::after{
+    content: " " leader(dotted) " " target-counter(attr(href), page);
+}
+.mpdf_toc a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* hyphenation  */
+
+p.hyphenate {
+  hyphens: auto;
+  -epub-hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/**************************************************************/
+/* all pages which start on the right */
+h1.section, .chapter-h1, .toc {
+  break-before: left;
+}
+
+/* chapter counter */
+.chapter-h1 {
+  counter-increment: chapterCounter 1; /* Increment the chapter counter */
+  counter-reset: sectionCounter 0 subSectionCounter 0 subSubSectionCounter 0;  /* Reset counters for subsections */
+  counter-reset: tables 0 figures 0;  /* Reset counters for tables and figures */
+  string-set: chaptertitle self;  /* Set the current chapter title as string for the header */
+}
+
+/**************************************************************/
+/* numbering of figures and tables */
+div.group_img {
+  counter-increment: figures;
+}
+div.group_img > .caption_small::before {
+  content: "Fig. " counter(chapterCounter) "." counter(figures) ": "; /* Add figure numbering */
+}
+
+
+/* END PDFreactor specific CSS */
+/* START generic Print CSS */
+
+body {
+  font-size: 10pt; 
+  line-height: 15pt; 
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-family: "texgyreadventor"; 
+  text-align: left;
+  hyphens: auto;
+  widows: 2;
+  orphans: 2;
+}
+
+.impl {
+  margin: 0;
+  text-indent: 0;
+  text-align: left;
+}
+
+.impl-bold {
+  margin: 0;
+  text-indent: 0;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* SECTIONS (or parts, as they are called in LaTeX) */
+h1.section {
+  line-height: inherit;
+  padding-top: 40%;
+  margin-top: 0;
+  font-family: "texgyreadventor"; 
+  text-align: center; 
+  font-weight: normal; 
+  font-size: 20pt;
+  text-transform: uppercase; 
+  border-bottom: 0rem solid black;
+  text-decoration: none;
+}
+
+/* FRONT MATTER (half-title) **********************************************/
+div.frontmatter-half-title {
+  /*uncomment4mpdf_page: frontmatter; /* needed for mpdf pdf rendering */
+  font-weight: bold; 
+  text-align: left; 
+  text-transform: uppercase; 
+  font-family: "texgyreadventor"; 
+  text-decoration: none;
+  font-size: 20pt;
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  padding-top: 45pt;
+}
+
+div.frontmatter-author {
+  font-weight: normal;
+  margin-top: 3em;
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 20pt;
+}
+
+/* FRONT MATTER (title) *****************************************************/
+div.frontmatter-title {
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+  padding-top: 45pt;
+  text-align: left; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  font-family: "texgyreadventor"; 
+  text-decoration: none;
+  font-size: 30pt;
+}
+
+div.frontmatter-line {
+  width: 33%;
+  background-color: black;
+  height: 0.3em; 
+  margin-bottom: 2em;
+}
+
+div.frontmatter-subtitle {
+  line-height: 1.1em;
+  margin-bottom: 2em;
+  font-weight: normal;
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 20pt;
+}
+
+div.frontmatter-author-title {
+  line-height: 1.1em;
+  font-weight: normal;
+  margin-bottom: 2em;
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+  font-size: 20pt;
+}
+
+.frontmatter-bottom {
+  font-weight: normal;
+  font-size: 0.9em;
+  line-height: 1.1em;
+  text-align: left; 
+  font-family: "texgyreadventor"; 
+}
+
+/* DEDICATION  ***********************************************************/
+div.dedication {
+  padding-top: 45pt;
+}
+
+p.dedication {
+  font-family: texgyreadventor;
+  font-weight: normal;
+  text-align: left;
+  font-style: italic;
+  font-size: 13.3pt;
+  line-height: 1.1em;
+  display: inline; 
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Table of contents ****************************************/
+div.mpdf_toc {
+  font-family: "texgyreadventor"; 
+  padding-top: 45pt;
+}
+
+div.mpdf_toc_level_0 {
+  font-size: 10pt;
+  font-weight: bold;
+  text-indent: 0;
+  padding: 0;
+  margin: 0; 
+  width: auto;
+}
+
+div.mpdf_toc_level_1 {
+  text-indent: 0;
+  padding: 0;
+  margin: 0; 
+  padding-left: 8mm;
+  width: auto;
+}
+
+div.mpdf_toc_level_2,
+div.mpdf_toc_level_3,
+div.mpdf_toc_level_4,
+div.mpdf_toc_level_5
+{
+  text-indent: 0;
+  padding: 0;
+  margin: 0; 
+  padding-left: 16mm;
+  width: auto;
+}
+
+.mpdf_toc_t_level_0,
+.mpdf_toc_t_level_1,
+.mpdf_toc_t_level_2,
+.mpdf_toc_t_level_3,
+.mpdf_toc_t_level_4,
+.mpdf_toc_t_level_5
+{
+  font-size: 10pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+.mpdf_toc_p_level_0,
+.mpdf_toc_p_level_1,
+.mpdf_toc_p_level_2,
+.mpdf_toc_p_level_3,
+.mpdf_toc_p_level_4,
+.mpdf_toc_p_level_5
+{
+  font-size: 10pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.toc-title 
+{
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+  font-family: "texgyreadventor"; 
+  font-size: 16.6pt;
+  font-weight: "bold"; 
+  text-align: "left"; 
+  hyphens: auto;
+}
+
+/* Body styling ************************************************************/
+
+/* Info Box */
+.bk-box {
+  font-family: "texgyreadventor"; 
+  font-size: 0.9em; 
+  color: #000000;
+  background-color: #ffffff;
+  padding-bottom: 0.5em; 
+  margin-top: 15pt; 
+  margin-bottom: 15pt; 
+  border-left: 0.5pt solid #000000;
+  border-top: 0.5pt solid #000000;
+  border-right: 0.5pt solid #000000;
+  border-bottom: 0.5pt solid #000000; 
+}
+.bk-box p {
+  padding: 0 0.5em;
+  text-indent: 0ptem;
+  margin-bottom: 0;
+}
+.bk-box .box-caption {
+  color: #000000;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+  border-bottom: 0.5pt solid #000000; 
+  margin-bottom: 0.5em;
+}
+.bk-box .box-caption p {
+  font-weight: bold;
+  padding: 0em;
+}
+
+/* dropcaps*/
+.dropcap {
+  /*font-size: inheritpt; /* for the future */
+}
+
+h1.chapter-h1 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: normal; 
+  font-family: "texgyreadventor"; 
+  font-size: 23.3pt;
+  padding-top: 0pt; 
+  margin-bottom: 60pt; 
+  line-height: 30pt; 
+  text-transform: none; 
+  border-bottom: 0.05rem solid #000000;
+  text-decoration: none;
+}
+
+h1.body-h1 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: normal; 
+  font-family: "texgyreadventor"; 
+  font-size: 23.3pt;
+  padding-top: 15pt; 
+  /*uncomment4mpdf_margin-bottom: 15pt; /**/
+  line-height: 30pt; 
+  text-transform: none; 
+  border-bottom: 0.05rem solid black;
+  text-decoration: none;
+}
+
+h2.body-h2 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: normal; 
+  font-family: "texgyreadventor"; 
+  font-size: 16.6pt;
+  padding-top: 15pt; 
+  /*uncomment4mpdf_margin-bottom: 15pt; /**/
+  line-height: 30pt; 
+  text-transform: none; 
+  border-bottom: 0.05rem solid black;
+  text-decoration: none;
+}
+
+h3.body-h3 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: bold; 
+  font-family: "texgyreadventor"; 
+  font-size: 10pt;
+  padding-top: 15pt; 
+  /*uncomment4mpdf_margin-bottom: 15pt; /**/
+  line-height: 15pt; 
+  text-transform: none; 
+  border-bottom: 0rem solid black;
+  text-decoration: none;
+}
+
+h4.body-h4 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: normal; 
+  font-family: "texgyreadventor"; 
+  font-size: 10pt;
+  padding-top: 15pt; 
+  /*uncomment4mpdf_margin-bottom: 15pt; /**/
+  line-height: 15pt; 
+  text-transform: none; 
+  border-bottom: 0rem solid black;
+  text-decoration: none;
+}
+
+h5.body-h5 {
+  margin-top: 0;
+  padding-bottom: 0;
+  color: #000000; 
+  text-align: left; 
+  font-weight: normal; 
+  font-family: "texgyreadventor"; 
+  font-size: 10pt;
+  padding-top: 15pt; 
+  /*uncomment4mpdf_margin-bottom: 15pt;/**/ 
+  line-height: 15pt; 
+  text-transform: none; 
+  border-bottom: 0rem solid black;
+  text-decoration: none;
+}
+
+p {
+  font-weight: normal;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0pt; 
+}
+p.body-first {
+  text-indent: 0;
+  margin-bottom: 0pt; 
+}
+p.body {
+  margin-bottom: 0pt; 
+  text-indent: 15pt; 
+}
+p.hanging {
+  margin-bottom: 0pt; 
+  text-indent: -15pt;
+  padding-left: 15pt;
+}
+p.quote:first-child:first-letter{
+  float:left;
+  margin-top:7px;
+  font-size:70px;
+  margin-right:5px;
+  color:#3D3529;
+}
+.quote-before {
+  display: none;
+}
+blockquote, .quote {
+  font-family: "texgyreadventor"; 
+  display: inline;
+  font-weight: normal; 
+  font-size: 13.3pt;
+  font-style: normal;
+  text-indent: 0;
+  border-left: 0.05em solid #000;
+  padding-left: 2em;
+  margin-left: 15pt;
+  margin-top: 15pt; 
+  margin-bottom: 15pt; /**/
+  text-align: left; 
+  line-height: 15pt; 
+  text-transform: none; 
+  text-decoration: none;
+}
+/* Lists ****************************************************************/
+ul, ol {
+  line-height: 15pt; 
+  margin-top: 15pt; 
+  margin-bottom: 15pt; 
+}
+li {
+  padding: 0;
+  margin: 0;
+  line-height: 15pt; 
+}
+/* IMAGE (plus captions) ************************************************/
+img, div.image {
+  max-width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+
+.group_img {
+  page-break-inside: avoid;
+  padding-top: 0pt; 
+  margin-bottom: 0pt; 
+}
+
+caption, 
+.caption,
+.caption_small, 
+.caption_table,
+.caption_img, 
+.caption_fig, 
+.caption_image, 
+.caption_figure {
+  margin-top: 15pt;
+  font-size: 9pt;
+  line-height: 15pt;
+  font-style: italic;
+}
+.center {
+  text-align: center;
+}
+/* PREFORMATTED  ******************************************************/
+pre, code {
+  padding-bottom: 0;
+  padding-top: 0;
+  text-align: left;/* no matter what the main alignment says: long, wrapped lines should not justify */
+  font-family: "texgyrecursor"; 
+  font-weight: "normal"; 
+  color: #000000; 
+  line-height: 15pt; 
+  margin-top: 15pt; 
+  margin-bottom: 15pt; 
+}
+/* additional CSS to wrap long lines */
+pre, code { 
+  white-space:pre-wrap;/*css-3 which works well with PDFreactor */ 
+  /*white-space:-moz-pre-wrap;/*Mozilla,since1999*/ 
+  /*white-space:-pre-wrap;/*Opera4-6*/ 
+  /*white-space:-o-pre-wrap;/*Opera7*/ 
+  /*word-wrap:break-word;/*InternetExplorer5.5+*/　　
+} 
+/* ENDNOTES **********************************************************/
+.endnote {
+  vertical-align: middle;
+  font-style: italic;
+  font-size: 0.75em;
+}
+ol.endnotes {
+  margin-top: 2em;
+  padding-left: 1.2em;
+}
+ol.endnotes li {
+  font-weight: normal;
+  font-size: 0.8em;
+  line-height: inherit;
+  margin-bottom: 0em; /* potential padding between endnotes? */ 
+}
+/* make sure there are no indents in the endnotes coming from paragraph styling */
+ol.endnotes li p {
+  margin-bottom: 0pt; 
+  text-indent: 0; 
+}
+
+/* sub and sup formatting to keep line-height intact */
+/* see also .endnote which works for MPDF. The below works for CSS2PDF renderers */
+sub, sup {
+  /* Specified in % so that the sup/sup is the
+     right size relative to the surrounding text */
+  font-size: 75%;
+
+  /* Zero out the line-height so that it doesn't
+     interfere with the positioning that follows */
+  line-height: 0;
+
+  /* Where the magic happens: makes all browsers position
+     the sup/sup properly, relative to the surrounding text */
+  position: relative;
+
+  /* Note that if you're using Eric Meyer's reset.css, this
+     is already set and you can remove this rule */
+  vertical-align: baseline;
+}
+
+sup {
+  /* Move the superscripted text up */
+  top: -0.5em;
+}
+
+sub {
+  /* Move the subscripted text down, but only
+     half as far down as the superscript moved up */
+  bottom: -0.25em;
+}
+
+/* END generic Print CSS */

@@ -45,6 +45,7 @@ if(
   }
   print "</ul>\n";
   print "\nDelete page 2: <pre>pdftk pdfreactor-body.pdf cat 1 3-end output pdfreactor.pdf</pre>";
+  print "\Create PDFreactor PDF: <pre>/home/micz/Software/PDFreactor_8_1_8613_1/bin/pdfreactor.py -i body-pdfreactor.html -o pdfreactor.pdf</pre>";
   print "\Create PrinceXML PDF: <pre>prince -s pdfreactor-style.css pdfreactor-body.html --pdf-profile=PDF/X-3:2003 -o princexml.pdf</pre>";
   print "\n</body>\n</html>";
 }
