@@ -4,6 +4,19 @@
 
 ### Include in `<html lang="de">`
 
+## Changes from mpdf converter
+
+### Delete mpdf tags:
+* `<pagebreak ... />
+* All header and footer related mpdf tags: 
+* * `<htmlpageheader ... </htmlpageheader>`
+* * `<htmlpagefooter ... </htmlpagefooter>`
+* `<tocpagebreak ...</tocpagebreak>
+* `<sethtmlpagefooter page="odd" value="off">
+* `<sethtmlpagefooter page="even" value="off">
+* `<tocentry ...</tocentry>
+
+
 ## Frontmatter
 
 ### Wrap pages in tags
