@@ -58,7 +58,7 @@ chapters and subheadings inside the chapter. It could look like this (indentatio
 ## Mainmatter
 
 ### Wrap chapters in tags
-* `<section data-type="chapter" class="chapter mainmatter">`
+* `<div data-type="chapter" class="chapter mainmatter">`
 
 ### Add unique ID to chapter titles and sections (parts)
 * `<h1 class="body-h1" id="rellinkch1">`
