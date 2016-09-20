@@ -7,11 +7,11 @@
 ## Frontmatter
 
 ### Wrap pages in tags
-* `<section id="frontmatter-half-title">`
-* `<section id="frontmatter-dedication">`
-* `<section id="frontmatter-title-page">`
-* `<section id="frontmatter-collophon">`
-* `<section class="mpdf_toc">`
+* `<div id="frontmatter-half-title">`
+* `<div id="frontmatter-dedication">`
+* `<div id="frontmatter-title-page">`
+* `<div id="frontmatter-collophon">`
+* `<div class="mpdf_toc">`
 
 ### Generate HTML for table of contents
 
