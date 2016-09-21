@@ -9,14 +9,24 @@
 ### Delete mpdf tags:
 * `<pagebreak ... />
 * All header and footer related mpdf tags: 
-* * `<htmlpageheader ... </htmlpageheader>`
-* * `<htmlpagefooter ... </htmlpagefooter>`
+  * `<htmlpageheader ... </htmlpageheader>`
+  * `<htmlpagefooter ... </htmlpagefooter>`
 * `<tocpagebreak ...</tocpagebreak>
 * `<sethtmlpagefooter page="odd" value="off">
 * `<sethtmlpagefooter page="even" value="off">
 * `<tocentry ...</tocentry>
 
+### Trim headlines in tags
 
+Currently, the headline tags sometimes include line breaks like this:
+```
+<h1 class="chapter-h1"> 
+H1: Font styles and paragraph settings
+</h1>
+```
+These need to be trimmed to look like this:
+
+`<h1 class="chapter-h1">H1: Font styles and paragraph settings</h1>`
 ## Frontmatter
 
 ### Wrap pages in tags
