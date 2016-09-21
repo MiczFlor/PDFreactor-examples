@@ -7,14 +7,14 @@
 ## Changes from mpdf converter
 
 ### Delete mpdf tags:
-* `<pagebreak ... />
+* `<pagebreak ... />`
 * All header and footer related mpdf tags: 
   * `<htmlpageheader ... </htmlpageheader>`
   * `<htmlpagefooter ... </htmlpagefooter>`
-* `<tocpagebreak ...</tocpagebreak>
-* `<sethtmlpagefooter page="odd" value="off">
-* `<sethtmlpagefooter page="even" value="off">
-* `<tocentry ...</tocentry>
+* `<tocpagebreak ...</tocpagebreak>`
+* `<sethtmlpagefooter page="odd" value="off">`
+* `<sethtmlpagefooter page="even" value="off">`
+* `<tocentry ...</tocentry>`
 
 ### Trim headlines in tags
 
