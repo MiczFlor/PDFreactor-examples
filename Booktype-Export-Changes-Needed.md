@@ -27,6 +27,13 @@ H1: Font styles and paragraph settings
 These need to be trimmed to look like this:
 
 `<h1 class="chapter-h1">H1: Font styles and paragraph settings</h1>`
+
+### Remove aloha tag classes
+Tags like this show up in the export:
+
+* `<p class="aloha-editing-p">`
+* `<br class="aloha-end-br">`
+
 ## Frontmatter
 
 ### Wrap pages in tags
