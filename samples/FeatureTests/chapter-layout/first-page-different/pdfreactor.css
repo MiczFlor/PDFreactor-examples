@@ -1,0 +1,194 @@
+  @page {
+      sheet-size: 150mm 200mm;  
+      size: 150mm 200mm;  
+  }
+  @page:right {    
+      margin-left: 1cm; 
+      margin-right: 1cm;
+      margin-top: 2.4cm; 
+      margin-bottom: 2cm;       
+  }
+  @page:left {    
+      margin-right: 1cm; 
+      margin-left: 1cm;
+      margin-top: 2.4cm; 
+      margin-bottom: 2cm;       
+  }
+@page
+{
+  @top-left { 
+    content: none; 
+    margin-top: 8mm;
+    font-family: ""; 
+    white-space:pre-wrap;
+  }
+  @top-center { 
+    content: ""; 
+    margin-top: 8mm;
+    font-family: ""; 
+    white-space:pre-wrap;
+  }
+  @top-right { 
+    content: none; 
+    margin-top: 8mm;
+    font-family: ""; 
+    white-space:pre-wrap;
+  }
+  @bottom-left { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: ""; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+  @bottom-center { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: ""; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+  @bottom-right { 
+    content: none; 
+    margin-bottom: 12mm;
+    font-family: ""; 
+    font-size: 10pt; 
+    white-space:pre-wrap;
+  }
+}
+
+/**************************************************************/
+/* only chapters with class "mainmatter" will get this treatment */
+/* custom header before chapter name */
+.mainmatter > .chapter-h1::before { 
+    content: "Chapter " counter(chaptercounter, "-ro-spelled-out-en") "\A";
+    color: red;
+    display: inline-block;
+    margin-left: -20mm;
+    padding-left: 20mm;
+    width: 200mm;
+    padding-top: 100px;
+    height: 200px;
+    white-space: pre;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    background-image: url("../../../../img/VictorianFloral05.svg");
+    background-size: cover; 
+    background-color: white; /* will overwrite header top-left etc. info */
+}
+
+/* chapter and table counter */
+div.mainmatter {
+  counter-increment: chaptercounter 1; /* Increment the chapter counter */
+}
+
+
+/**************************************************************/
+/* BASELINE GRID */
+/* set baseline grid for line height in all document */
+body {
+  -ro-line-grid: create;
+  line-height: 17pt;
+}
+/* snapping to baseline for the paragraphs which are text */
+p.body-first,
+p.body {
+  -ro-line-snap: baseline;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+/* do NOT snap to baseline in captions */
+caption, 
+.caption,
+.caption_small, 
+.caption_table,
+.caption_img, 
+.caption_fig, 
+.caption_image, 
+.caption_figure {
+  -ro-line-grid: create;
+  line-height: auto;
+  -ro-line-snap: contain;
+}
+/* For elements like figures and tables, set bottom margin to 0 to avoid big gaps */
+/* / BASELINE GRID */
+
+/**************************************************************/
+/* page header and footer */
+
+div.mainmatter {
+  page: mainmatter;
+}
+@page mainmatter:left {
+  @top-left { 
+    content: "";
+  }
+  @top-center { 
+    content: "top center"; 
+  }
+  @top-right { 
+    content: "Mainmatter";
+  }
+  @bottom-left { 
+    content: "";
+  }
+  @bottom-center { 
+    content: counter(page);
+  }
+  @bottom-right { 
+    content: "";
+  }
+}
+@page mainmatter:right {
+  @top-left { 
+    content: "";
+  }
+  @top-center { 
+    content: "top center"; 
+  }
+  @top-right { 
+    content: "Mainmatter";
+  }
+  @bottom-left { 
+    content: "";
+  }
+  @bottom-center { 
+    content: counter(page);
+  }
+  @bottom-right { 
+    content: "";
+  }
+}
+
+/**************************************************************/
+/* all pages which start on the right */
+h1.section, .chapter-h1, .toc {
+  break-before: always;
+}
+
+/* TABLE *****************************************************************/
+/* table css */
+table {
+  border-collapse: collapse;
+  max-width: 100%;
+}
+th, td {
+  border: 0.1mm solid #000000;
+  padding: 0.6em 0.8em;
+}
+
+
+caption, 
+.caption,
+.caption_small, 
+.caption_table,
+.caption_img, 
+.caption_fig, 
+.caption_image, 
+.caption_figure {
+  margin-top: 15pt;
+  font-size: 9pt;
+  font-style: italic;
+}
