@@ -1,0 +1,82 @@
+/* importing generic design CSS files */
+@import url("../../_CSS/pagedimensions-generic.css");
+@import url("../../_CSS/tableofcontents-generic.css");  
+
+/**************************************************************/
+/* footnotes */
+.footnote {
+    float: footnote;
+}
+/* design footnote area on page */
+@page {
+    @footnote {
+        border-top: solid black 1px;
+        background-color: yellow;
+    }
+}
+/* the footnote in the text */
+.footnote::footnote-call {
+    content: counter(footnote, decimal);
+
+    color: red;
+    /* Specified in % so that the sup/sup is the
+    right size relative to the surrounding text */
+    font-size: 75%;
+    
+    /* Zero out the line-height so that it doesn't
+    interfere with the positioning that follows */
+    line-height: 0;
+    
+    /* Where the magic happens: makes all browsers position
+    the sup/sup properly, relative to the surrounding text */
+    position: relative;
+    
+    /* Note that if you're using Eric Meyer's reset.css, this
+    is already set and you can remove this rule */
+    vertical-align: baseline;
+}
+/* the footnote at the bottom of the page */
+.footnote::footnote-marker {
+    content: counter(footnote, decimal);
+    color: green;
+    padding-right: 1em;
+    
+    font-size: 1em;
+    
+    /* Zero out the line-height so that it doesn't
+    interfere with the positioning that follows */
+    line-height: 0;    
+    /* Where the magic happens: makes all browsers position
+    the sup/sup properly, relative to the surrounding text */
+    position: relative;    
+    /* Note that if you're using Eric Meyer's reset.css, this
+    is already set and you can remove this rule */
+    vertical-align: baseline;
+}
+/* footnote styling */
+.footnote {
+    font-size: 17pt;
+}
+/* reset footnote counter in new chapter */
+.chapter-h1 {
+  counter-reset: footnote;
+}
+
+
+/**************************************************************/
+/* table of contents */
+
+.mpdf_toc a[href]::after{
+    content: " " leader(dotted) " " target-counter(attr(href), page);
+}
+.mpdf_toc a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/**************************************************************/
+/* all pages which start on the right */
+h1.section, .chapter-h1, .toc {
+  break-before: left;
+}
+

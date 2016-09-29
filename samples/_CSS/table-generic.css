@@ -1,0 +1,25 @@
+
+/* TABLE *****************************************************************/
+/* table css */
+table {
+  border-collapse: collapse;
+  max-width: 100%;
+}
+th, td {
+  border: 0.1mm solid #000000;
+  padding: 0.6em 0.8em;
+}
+
+
+caption, 
+.caption,
+.caption_small, 
+.caption_table,
+.caption_img, 
+.caption_fig, 
+.caption_image, 
+.caption_figure {
+  margin-top: 15pt;
+  font-size: 9pt;
+  font-style: italic;
+}

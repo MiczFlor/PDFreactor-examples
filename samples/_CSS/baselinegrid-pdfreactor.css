@@ -1,0 +1,33 @@
+/**************************************************************/
+/* BASELINE GRID */
+/* set baseline grid for line height in all document */
+body {
+  -ro-line-grid: create;
+  line-height: 18pt;
+}
+/* snapping to baseline for the paragraphs which are text */
+p.body-first,
+p.body {
+  -ro-line-snap: baseline;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+/* do NOT snap to baseline in captions */
+caption, 
+.caption,
+.caption_small, 
+.caption_table,
+.caption_img, 
+.caption_fig, 
+.caption_image, 
+.caption_figure,
+.mpdf_toc,
+.toc_contents,
+.toc_tables,
+.toc_figures {
+  -ro-line-grid: create;
+  line-height: auto;
+  -ro-line-snap: contain;
+}
+/* For elements like figures and tables, set bottom margin to 0 to avoid big gaps */
+/* / BASELINE GRID */

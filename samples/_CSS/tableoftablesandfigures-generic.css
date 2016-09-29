@@ -1,0 +1,26 @@
+
+/* Table of tables and figures ****************************************/
+div.toc_tables,
+div.toc_figures {
+  font-family: ""; 
+  padding-top: 2em;
+}
+
+div.toc_tables_level_0,
+div.toc_figures_level_0 {
+  font-size: 10pt;
+  font-weight: bold;
+  text-indent: 0;
+  padding: 0;
+  margin: 0; 
+  width: auto;
+}
+
+div.toc_tables_level_1,
+div.toc_figures_level_1 {
+  text-indent: 0;
+  padding: 0;
+  margin: 0; 
+  padding-left: 8mm;
+  width: auto;
+}
