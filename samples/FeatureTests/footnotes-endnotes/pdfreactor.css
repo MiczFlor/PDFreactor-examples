@@ -2,6 +2,9 @@
 @import url("../../_CSS/pagedimensions-generic.css");
 @import url("../../_CSS/tableofcontents-generic.css");  
 
+/* importing PDFreactor specific controlling CSS */
+@import url("../../_CSS/tableofcontentspages-pdfreactor.css"); 
+
 /**************************************************************/
 /* footnotes */
 .footnote {
@@ -60,18 +63,6 @@
 /* reset footnote counter in new chapter */
 .chapter-h1 {
   counter-reset: footnote;
-}
-
-
-/**************************************************************/
-/* table of contents */
-
-.mpdf_toc a[href]::after{
-    content: " " leader(dotted) " " target-counter(attr(href), page);
-}
-.mpdf_toc a {
-  color: #000000;
-  text-decoration: none;
 }
 
 /**************************************************************/

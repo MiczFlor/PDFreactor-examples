@@ -1,0 +1,11 @@
+
+/**************************************************************/
+/* table of contents */
+
+.mpdf_toc a[href]::after{
+    content: " " leader(dotted) " " target-counter(attr(href), page);
+}
+.mpdf_toc a {
+  color: #000000;
+  text-decoration: none;
+}

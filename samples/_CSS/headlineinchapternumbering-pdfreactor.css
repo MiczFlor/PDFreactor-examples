@@ -1,0 +1,22 @@
+
+/**************************************************************/
+/* Add the Chapter numbers inside chapter */
+.chapter-h1::before {    
+    content: counter(chaptercounter) " ";
+}
+
+.body-h1 { counter-increment: body-h1 1; }
+.body-h1::before { content: counter(chaptercounter) "." counter(body-h1) " "; }
+
+.body-h2 { counter-increment: body-h2 1; }
+.body-h2::before { content: counter(chaptercounter) "." counter(body-h1) "." counter(body-h2) " "; }
+
+.body-h3 { counter-increment: body-h3 1; }
+.body-h3::before { content: counter(chaptercounter) "." counter(body-h1) "." counter(body-h2) "." counter(body-h3) " "; }
+
+.body-h4 { counter-increment: body-h4 1; }
+.body-h4::before { content: counter(chaptercounter) "." counter(body-h1) "." counter(body-h2) "." counter(body-h3) "." counter(body-h4) " "; }
+
+.body-h5 { counter-increment: body-h4 1; }
+.body-h5::before { content: counter(chaptercounter) "." counter(body-h1) "." counter(body-h2) "." counter(body-h3) "." counter(body-h4) "." counter(body-h5) " "; }
+

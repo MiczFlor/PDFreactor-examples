@@ -1,0 +1,8 @@
+
+/**************************************************************/
+/* chapter counter */
+div.chapter {
+  counter-increment: chaptercounter 1; /* Increment the chapter counter */
+  counter-reset: body-h1 0 body-h2 0 body-h3 0 body-h4 0 body-h5 0;
+  counter-reset: tables 0 figures 0;  /* Reset counters for tables and figures */
+}

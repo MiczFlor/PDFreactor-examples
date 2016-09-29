@@ -1,0 +1,43 @@
+
+/**************************************************************/
+/* numbering for all toc levels */
+/* we ignore level 0 here, because it is used for the sections (or parts) of a book */
+.mpdf_toc .mpdf_toc_level_1 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    " ";
+}
+.mpdf_toc .mpdf_toc_level_2 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    "." target-counter(-ro-attr(href url), body-h1)
+    " ";
+}
+.mpdf_toc .mpdf_toc_level_3 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    "." target-counter(-ro-attr(href url), body-h1)
+    "." target-counter(-ro-attr(href url), body-h2)
+    " ";
+}
+.mpdf_toc .mpdf_toc_level_4 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    "." target-counter(-ro-attr(href url), body-h1)
+    "." target-counter(-ro-attr(href url), body-h2)
+    "." target-counter(-ro-attr(href url), body-h3)
+    " ";
+}
+.mpdf_toc .mpdf_toc_level_5 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    "." target-counter(-ro-attr(href url), body-h1)
+    "." target-counter(-ro-attr(href url), body-h2)
+    "." target-counter(-ro-attr(href url), body-h3)
+    "." target-counter(-ro-attr(href url), body-h4)
+    " ";
+}
+.mpdf_toc .mpdf_toc_level_6 a[href]::before{
+    content: target-counter(-ro-attr(href url), chaptercounter)
+    "." target-counter(-ro-attr(href url), body-h1)
+    "." target-counter(-ro-attr(href url), body-h2)
+    "." target-counter(-ro-attr(href url), body-h3)
+    "." target-counter(-ro-attr(href url), body-h4)
+    "." target-counter(-ro-attr(href url), body-h5)
+    " ";
+}

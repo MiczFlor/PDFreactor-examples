@@ -1,0 +1,43 @@
+
+/**************************************************************/
+/* table of tables */
+
+.toc_tables a[href]::after{
+    content: " " leader(dotted) " " target-counter(attr(href), page);
+}
+.toc_tables a {
+  color: #000000;
+  text-decoration: none;
+}
+/* numbering of tables in chapter */
+div.group_table {
+    margin-top: 10pt;
+    margin-bottom: 0pt;
+  break-inside: avoid-page;
+  counter-increment: tables;
+}
+div.group_table > .caption_table::before {
+  content: "Tab. " counter(chaptercounter) "." counter(tables) ": "; /* Add table numbering */
+}
+
+
+/**************************************************************/
+/* table of figures */
+
+.toc_figures a[href]::after{
+    content: " " leader(dotted) " " target-counter(attr(href), page);
+}
+.toc_figures a {
+  color: #000000;
+  text-decoration: none;
+}
+/* numbering of tables in chapter */
+div.group_img {
+    margin-top: 10pt;
+    margin-bottom: 0pt;
+  break-inside: avoid-page;
+  counter-increment: figures;
+}
+div.group_img > .caption_small::before {
+  content: "Fig. " counter(chaptercounter) "." counter(figures) ": "; /* Add table numbering */
+}

@@ -5,73 +5,12 @@
 @import url("../../../_CSS/table-generic.css");  
 
 /* importing PDFreactor specific controlling CSS */
+@import url("../../../_CSS/tableofcontentspages-pdfreactor.css"); 
 @import url("../../../_CSS/baselinegrid-pdfreactor.css");  
+@import url("../../../_CSS/tableoftablesandfigures-pdfreactor.css"); 
 
 /**************************************************************/
-/* table of contents */
-
-/* chapter and table counter */
-div.chapter {
-  counter-increment: chaptercounter 1; /* Increment the chapter counter */
-  counter-reset: tables 0 figures 0;  /* Reset counters for tables and figures */
-}
-.chapter-h1::before {
-    /* Add the Chapter and the Sub-Chapter numbers */
-    content: counter(chaptercounter, upper-latin) " ";
-    padding-right: 2mm;
-}
-
-.mpdf_toc a[href]::after{
-    content: " " leader(dotted) " " target-counter(attr(href), page);
-}
-.mpdf_toc a {
-  color: #000000;
-  text-decoration: none;
-}
-
-
-/**************************************************************/
-/* table of tables */
-
-.toc_tables a[href]::after{
-    content: " " leader(dotted) " " target-counter(attr(href), page);
-}
-.toc_tables a {
-  color: #000000;
-  text-decoration: none;
-}
-/* numbering of tables in chapter */
-div.group_table {
-    margin-top: 10pt;
-    margin-bottom: 0pt;
-  break-inside: avoid-page;
-  counter-increment: tables;
-}
-div.group_table > .caption_table::before {
-  content: "Tab. " counter(chaptercounter) "." counter(tables) ": "; /* Add table numbering */
-}
-
-
-/**************************************************************/
-/* table of figures */
-
-.toc_figures a[href]::after{
-    content: " " leader(dotted) " " target-counter(attr(href), page);
-}
-.toc_figures a {
-  color: #000000;
-  text-decoration: none;
-}
-/* numbering of tables in chapter */
-div.group_img {
-    margin-top: 10pt;
-    margin-bottom: 0pt;
-  break-inside: avoid-page;
-  counter-increment: figures;
-}
-div.group_img > .caption_small::before {
-  content: "Fig. " counter(chaptercounter) "." counter(figures) ": "; /* Add table numbering */
-}
+/* for baseline grid details, see: ../../../_CSS/baselinegrid-pdfreactor.css */
 
 /**************************************************************/
 /* all pages which start on the right */
