@@ -1,0 +1,22 @@
+/* importing generic design CSS files */
+@import url("../../_CSS/pagedimensions-generic.css");
+@import url("../../_CSS/tableofcontents-generic.css");  
+@import url("../../_CSS/tableoftablesandfigures-generic.css");  
+@import url("../../_CSS/table-generic.css");  
+
+/* importing PDFreactor specific controlling CSS */
+@import url("../../_CSS/tableofcontentspages-pdfreactor.css"); 
+@import url("../../_CSS/baselinegrid-pdfreactor.css");  
+@import url("../../_CSS/tableoftablesandfigures-pdfreactor.css"); 
+
+/**************************************************************/
+@import url("../../_CSS/indexpageref-pdfreactor.css"); 
+
+/**************************************************************/
+/* all pages which start on the right */
+h1.section, .chapter-h1, .toc {
+  break-before: left;
+}
+
+
+

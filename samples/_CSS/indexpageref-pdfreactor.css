@@ -1,0 +1,27 @@
+/**************************************************************/
+/* table of contents */
+
+.index-list a[href]::after{
+    content: " " target-counter(attr(href), page);
+}
+.index-list a {
+  color: #000000;
+  text-decoration: none;
+}
+
+div.index-title
+{
+  line-height: 1.1em;
+  margin: 0;
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 0em;
+  font-family: ""; 
+  font-size: 16.6pt;
+  font-weight: "bold"; 
+  text-align: "left"; 
+}
+
+span.indexed {
+    color: red;
+}
