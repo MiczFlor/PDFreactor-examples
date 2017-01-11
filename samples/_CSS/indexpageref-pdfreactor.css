@@ -8,6 +8,11 @@
   color: #000000;
   text-decoration: none;
 }
+.index-list label {
+  display: block;
+  width: 5cm;
+  float: left;
+}
 
 div.index-title
 {
